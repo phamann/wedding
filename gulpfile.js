@@ -6,6 +6,8 @@ var cssshrink = require('gulp-cssshrink');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var livereload = require('gulp-livereload');
+var shell = require('gulp-shell');
+var uglify = require('gulp-uglify');
 var _ = require('lodash');
 
 var DIST = 'public/dist/',
@@ -59,6 +61,14 @@ gulp.task('sass', function () {
         .pipe(livereload());
 });
 
-gulp.task('dist', ['sass']);
+gulp.task('jspm', shell.task(['jspm bundle-sfx lib/app ' + DIST + 'app.js']));
+
+gulp.task('compress', ['jspm'], function() {
+    gulp.src(DIST + 'app.js')
+        .pipe(uglify())
+        .pipe(gulp.dest(DIST))
+});
+
+gulp.task('dist', ['sass', 'jspm', 'compress']);
 gulp.task('default', ['sass', 'watch', 'nodemon']);
 

@@ -58,6 +58,9 @@
     </script>
 
     <!--Application JavaScript Files-->
+    {% if isProd %}
+    <script src="dist/app.js"></script>
+    {% else %}
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
@@ -66,6 +69,7 @@
         // these two properties are set in the `jspm init -p` prompts
         System.import('lib/app');
     </script>
+    {% endif %}
 </body>
 
 </html>
