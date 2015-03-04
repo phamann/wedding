@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var ngAnnotate = require('gulp-ng-annotate');
 var nodemon = require('gulp-nodemon');
 var sass = require('gulp-sass');
 var cssshrink = require('gulp-cssshrink');
