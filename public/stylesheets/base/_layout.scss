@@ -1,0 +1,113 @@
+body {
+    background: $c-background;
+
+    @media (min-width: 800px) {
+        background: transparent;
+        background-image:  linear-gradient(
+            to bottom,
+            $c-background,
+            $c-background 300px,
+            rgba($c-background, .2) 300px,
+            rgba($c-background, .2)
+        );
+    }
+}
+
+.wrap {
+    position: relative;
+    max-width: 1024px;
+    margin: 10px;
+    padding-bottom: 20px;
+    border-top: none;
+    background: white;
+
+    @media (min-width: 800px) {
+        border: 10px solid rgba($c-background, 0.05);
+        margin: 40px auto;
+        padding-bottom: 40px;
+    }
+}
+
+.navbar {
+    background: white;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-btn {
+    margin-left: 10px;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 175px;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 800px) {
+        height: 350px;
+    }
+}
+
+.hero_img {
+    left: 0;
+    position: absolute;
+    top: -1 * 50%;
+    width: 100%;
+    min-height: 330px;
+}
+
+.hero_logo {
+    position: relative;
+    z-index: 2;
+    width: 160px;
+    top: 40px;
+
+    @media (min-width: 800px) {
+        top: 80px;
+        width: 300px;
+    }
+}
+
+.btn-success {
+    border-color: $c-accent;
+    background-color: $c-accent;
+    color: white;
+
+    &:hover {
+        border-color: darken($c-accent, 10%);
+        background: darken($c-accent, 10%);
+    }
+}
+
+.btn-primary {
+    background-color: white;
+    border-color: $c-accent;
+    color: $c-accent;
+
+    &:hover {
+        background-color: white;
+        border-color: darken($c-accent, 10%);
+        color: darken($c-accent, 10%);
+    }
+}
+
+.invite {
+    margin-top: 20px;
+    text-align: center;
+    @include f-copy;
+    color: $c-accent;
+
+    hr { width: 300px; }
+    h2 { color: $c-accent; }
+    p {  margin-bottom: 20px; }
+}
+
+#map {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}

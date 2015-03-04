@@ -1,0 +1,16 @@
+{
+  "jspm": {
+    "main": "angular.min",
+    "shim": {
+      "angular.min": {
+        "exports": "angular"
+      }
+    }
+  },
+  "main": "angular.min",
+  "shim": {
+    "angular.min": {
+      "exports": "angular"
+    }
+  }
+}

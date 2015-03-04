@@ -1,0 +1,8 @@
+{
+	"shim" : {
+		"angular-touch": {
+			"deps": ["angular"],
+			"exports": false
+		}
+	}
+}

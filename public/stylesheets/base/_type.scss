@@ -1,0 +1,37 @@
+p, li, em, a {
+    @include f-copy;
+    font-size: 16px;
+}
+
+.heading, h1 {
+    @include f-heading;
+    color: $c-accent;
+}
+
+.heading-light, h2, h3 {
+    @include f-headingLight;
+    color: #333;
+}
+
+.navbar .item a {
+    @include f-headingLight;
+    // color: white !important;
+    &:focus,
+    &:hover,
+    &:active {
+        color: $c-accent !important;
+    }
+}
+
+.navbar-brand {
+    @include f-heading;
+    color: $c-accent !important;
+}
+
+.invite {
+    @media (min-width: 800px) {
+        p { font-size: 24px; }
+        h4 { font-size: 28px; }
+        h2 { font-size: 32px; }
+    }
+}

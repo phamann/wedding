@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+$f-heading: 'Archer A', 'Archer B', georgia, serif;
+
+@mixin f-heading {
+    font-family: $f-heading;
+    font-weight: 800;
+    font-style: normal;
+}
+
+@mixin f-headingLight {
+    font-family: $f-heading;
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin f-copy {
+    font-family: $f-heading;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* ==========================================================================
+   Colours
+   ========================================================================== */
+//$c-accent: #98CDAF;
+$c-accent: #589984;
+$c-background: #D5BA9B;
