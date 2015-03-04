@@ -43,7 +43,8 @@
     "jshint-stylish": "^1.0.0",
     "gulp-livereload": "^3.7.0",
     "gulp-shell": "^0.3.0",
-    "jspm": "^0.14.0"
+    "jspm": "^0.14.0",
+    "mongoose": "^3.8.24"
   },
   "jspm": {
     "directories": {
