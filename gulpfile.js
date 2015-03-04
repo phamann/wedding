@@ -59,5 +59,6 @@ gulp.task('sass', function () {
         .pipe(livereload());
 });
 
+gulp.task('dist', ['sass']);
 gulp.task('default', ['sass', 'watch', 'nodemon']);
 
