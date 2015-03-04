@@ -42,7 +42,8 @@
     "gulp-cssshrink": "^0.1.4",
     "jshint-stylish": "^1.0.0",
     "gulp-livereload": "^3.7.0",
-    "gulp-shell": "^0.3.0"
+    "gulp-shell": "^0.3.0",
+    "jspm": "^0.14.0"
   },
   "jspm": {
     "directories": {
