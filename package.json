@@ -43,7 +43,7 @@
     "jshint-stylish": "^1.0.0",
     "gulp-livereload": "^3.7.0",
     "gulp-shell": "^0.3.0",
-    "jspm": "^0.14.0",
+    "jspm": "0.14.0",
     "mongoose": "^3.8.24",
     "nodemailer": "^1.3.1",
     "swig": "^1.4.2",
@@ -70,7 +70,8 @@
       "nodelibs-process": "github:jspm/nodelibs-process@^0.1.1",
       "process": "npm:process@^0.10.0",
       "text": "^0.0.2",
-      "ui-utils": "github:angular-ui/ui-utils@^0.2.1"
+      "ui-utils": "github:angular-ui/ui-utils@^0.2.1",
+      "wmluke/angular-flash": "github:wmluke/angular-flash@^0.1.14"
     }
   }
 }

@@ -8,6 +8,7 @@ import 'angular-sanitize';
 import 'angular-resource';
 import 'angular-touch';
 import 'angular-bootstrap';
+import 'angular-flash';
 import 'ui-utils';
 import './modules/users/users.client.module';
 import './modules/accomodation/accomodation.client.module';
@@ -20,6 +21,8 @@ var appModuleDependencies = [
     'ngAnimate',
     'ngTouch',
     'ngSanitize',
+    'angular-flash.service',
+    'angular-flash.flash-alert-directive',
     'ui.router',
     'ui.utils',
     'ui.bootstrap',

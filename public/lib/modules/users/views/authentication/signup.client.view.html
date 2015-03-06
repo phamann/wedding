@@ -7,8 +7,11 @@
 
         <div class="row">
             <div class="col-xs-10 col-md-8">
+                <div data-ng-show="error" class="alert alert-danger" role="alert">
+                    <strong data-ng-bind="error"></strong>
+                </div>
                 <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
-                    <fieldset>
+                   <fieldset>
                         <div class="form-group">
                             <label for="firstName" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-8">
@@ -54,10 +57,7 @@
                                 <a href="/#!/signin" class="show-signup">Login</a>
                             </div>
                         </div>
-                        <div data-ng-show="error" class="text-center text-danger">
-                            <strong data-ng-bind="error"></strong>
-                        </div>
-                    </fieldset>
+                   </fieldset>
                 </form>
             </div>
         </div>

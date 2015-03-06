@@ -1,0 +1,1 @@
+module.exports = require("github:wmluke/angular-flash@0.1.14/dist/angular-flash");
