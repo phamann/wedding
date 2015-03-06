@@ -2,8 +2,8 @@
 
 export var auth = angular.module('users.auth.controller', []);
 
-auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Authentication',
-    function($scope, $http, $location, Authentication) {
+auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Authentication', '$flash',
+    function($scope, $http, $location, Authentication, $flash) {
         $scope.authentication = Authentication;
 
         // If user is signed in then redirect back home
@@ -18,6 +18,15 @@ auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Au
             $http.post('/auth/signup', $scope.credentials).success(function(response) {
                 // If successful we assign the response to the global user model
                 $scope.authentication.user = response;
+
+                $flash(`Congrats! You successfully RSVP'd for our wedding,
+                       keep an eye on your email for further details.`,
+                       {
+                           type: 'success',
+                           persist: 1,
+                           duration: 10000
+                       }
+                );
 
                 // And redirect to the index page
                 $location.path('/');

@@ -24,9 +24,9 @@ System.config({
     "lodash": "npm:lodash@3.1.0",
     "nodelibs-process": "github:jspm/nodelibs-process@0.1.1",
     "process": "npm:process@0.10.0",
+    "angular-flash": "github:remind101/angular-flash@0.0.8",
     "text": "github:systemjs/plugin-text@0.0.2",
     "ui-utils": "github:angular-ui/ui-utils@0.2.1",
-    "wmluke/angular-flash": "github:wmluke/angular-flash@0.1.14",
     "github:angular-ui/bootstrap-bower@0.12.0": {
       "angular": "github:angular/bower-angular@1.2.28"
     },

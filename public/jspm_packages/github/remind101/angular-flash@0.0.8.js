@@ -1,0 +1,1 @@
+module.exports = require("github:remind101/angular-flash@0.0.8/dist/angular-flash.min");

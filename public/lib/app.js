@@ -8,6 +8,7 @@ import 'angular-sanitize';
 import 'angular-resource';
 import 'angular-touch';
 import 'angular-bootstrap';
+import 'angular-flash';
 import 'ui-utils';
 import './modules/users/users.client.module';
 import './modules/accomodation/accomodation.client.module';
@@ -20,6 +21,7 @@ var appModuleDependencies = [
     'ngAnimate',
     'ngTouch',
     'ngSanitize',
+    'ngFlash',
     'ui.router',
     'ui.utils',
     'ui.bootstrap',
@@ -32,16 +34,28 @@ var app = angular.module(
     appModuleDependencies
 );
 
-app.config(['$locationProvider',
+app.config(['$locationProvider', '$flashProvider',
     // function($locationProvider) {
-    //  // Use real URLs (with History API) instead of hashbangs
- //     $locationProvider.html5Mode({enabled: true, requireBase: false});
+    // Use real URLs (with History API) instead of hashbangs
+    // $locationProvider.html5Mode({enabled: true, requireBase: false});
     // }
 
-    function($locationProvider) {
+    function($locationProvider, $flashProvider){
         $locationProvider.hashPrefix('!');
+        $flashProvider.setRouteChangeSuccess('$stateChangeSuccess');
     }
 ]);
+
+app.run(function($templateCache) {
+    $templateCache.put('template/flash-messages.html',
+           '<div class="flash-messages">' +
+               '<div class="alert alert-{{message.type}}" ng-repeat="message in _flash.messages">' +
+                   '<button type="button" ng-click="message.remove()" class="close" data-dismiss="alert" aria-label="Close">' +
+                       '<span aria-hidden="true">&times;</span></button>' +
+                   '<span class="flash-content" ng-bind-html="message.message"></span>' +
+               '</div>' +
+               '</div>');
+});
 
 angular.element(document).ready(() => {
     angular.bootstrap(document, [appModuleName]);

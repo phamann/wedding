@@ -69,6 +69,7 @@
       "lodash": "^3.1.0",
       "nodelibs-process": "github:jspm/nodelibs-process@^0.1.1",
       "process": "npm:process@^0.10.0",
+      "remind101/angular-flash": "github:remind101/angular-flash@^0.0.8",
       "text": "^0.0.2",
       "ui-utils": "github:angular-ui/ui-utils@^0.2.1",
       "wmluke/angular-flash": "github:wmluke/angular-flash@^0.1.14"
