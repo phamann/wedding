@@ -1,4 +1,5 @@
 System.config({
+  "transpiler": "babel",
   "paths": {
     "*": "*.js",
     "patrickandgemma.com/*": "../project/lib/*.js",

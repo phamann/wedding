@@ -8,6 +8,7 @@ import 'angular-sanitize';
 import 'angular-resource';
 import 'angular-touch';
 import 'angular-bootstrap';
+import 'ui-utils';
 import './modules/users/users.client.module';
 import './modules/accomodation/accomodation.client.module';
 import './modules/core/core.client.module';
