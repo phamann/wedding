@@ -68,13 +68,13 @@ gulp.task('sass', ['clean'], function () {
 
 gulp.task('jspm', ['clean'], shell.task(['jspm bundle-sfx lib/app ' + DIST + 'javascript/app.js']));
 
-gulp.task('compress', ['clean', 'jspm'], function() {
-    gulp.src(DIST + 'javascript/app.js')
+gulp.task('compress', ['clean', 'jspm', 'rev'], function() {
+    gulp.src(DIST + 'javascript/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest(DIST))
+        .pipe(gulp.dest(DIST + 'javascript'))
 });
 
-gulp.task('rev', ['clean', 'sass', 'jspm','compress'], function () {
+gulp.task('rev', ['clean', 'sass', 'jspm'], function () {
     return gulp.src(DIST + '**/*')
         .pipe(rev())
         .pipe(gulp.dest(DIST))
@@ -82,6 +82,6 @@ gulp.task('rev', ['clean', 'sass', 'jspm','compress'], function () {
         .pipe(gulp.dest(DIST));
 });
 
-gulp.task('dist', ['clean','sass', 'jspm', 'compress', 'rev']);
+gulp.task('dist', ['clean','sass', 'jspm', 'rev', 'compress']);
 gulp.task('default', ['dist', 'watch', 'nodemon']);
 
