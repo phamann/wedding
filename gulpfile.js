@@ -70,7 +70,7 @@ gulp.task('jspm', ['clean'], shell.task(['jspm bundle-sfx lib/app ' + DIST + 'ja
 
 gulp.task('compress', ['clean', 'jspm', 'rev'], function() {
     gulp.src(DIST + 'javascript/*.js')
-        .pipe(uglify())
+        .pipe(uglify({ mangle: false }))
         .pipe(gulp.dest(DIST + 'javascript'))
 });
 
