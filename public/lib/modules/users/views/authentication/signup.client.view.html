@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="transport" class="col-sm-2 control-label">Transport</label>
                             <div class="col-sm-8">
-                                <select ng-model="credentials.transport" ng-options="transport.name for transport in transportOptions" class="form-control">
+                                <select ng-model="credentials.transport" ng-options="transport.value as transport.label for transport in transportOptions" class="form-control">
                                     <option value="">-- Choose --</option>
                                 </select>
                             </div>

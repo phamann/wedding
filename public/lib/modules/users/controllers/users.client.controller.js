@@ -11,4 +11,4 @@ users.controller('UsersController', ['$scope', '$http', '$location', 'User', 'Au
 
 		$scope.users = User.query();
 	}
-]);	
+]);

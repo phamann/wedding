@@ -39,6 +39,46 @@ body {
     margin-left: 10px;
 }
 
+.navbar-inverse .navbar-collapse {
+    border-color: $c-accent;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: $c-accent;
+
+    &:hover,
+    &:focus,
+   .icon-bar  {
+        background-color: $c-accent;
+    }
+
+    &:hover .icon-bar,
+    &:focus .icon-bar {
+        background-color: white;
+    }
+}
+
+.navbar-inverse .navbar-nav > .open > a {
+    background-color: $c-accent;
+
+    &:hover,
+    &:focus {
+        background-color: $c-accent;
+    }
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: $c-accent;
+}
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    &:hover,
+    &:focus {
+        color: $c-accent;
+    }
+}
+
 .hero {
     position: relative;
     overflow: hidden;

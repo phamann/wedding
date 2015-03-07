@@ -10,8 +10,8 @@ auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Au
         if ($scope.authentication.user) $location.path('/');
 
         $scope.transportOptions = [
-            {name: 'Bus from town', value: 'bus'},
-            {name: 'Not needed', value: 'none'}
+            {label: 'Bus from town', value: 'bus'},
+            {label: 'Not needed', value: 'none'}
         ];
 
         $scope.signup = function() {
