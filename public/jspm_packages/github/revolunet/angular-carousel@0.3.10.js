@@ -1,0 +1,1 @@
+module.exports = require("github:revolunet/angular-carousel@0.3.10/dist/angular-carousel");

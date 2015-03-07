@@ -5,6 +5,7 @@ import 'angular-ui-router';
 import 'angular-animate';
 import 'angular-cookies';
 import 'angular-sanitize';
+import 'angular-carousel';
 import 'angular-resource';
 import 'angular-touch';
 import 'angular-bootstrap';
@@ -25,6 +26,7 @@ var appModuleDependencies = [
     'ui.router',
     'ui.utils',
     'ui.bootstrap',
+    'angular-carousel',
     'users',
     'core'
 ];
