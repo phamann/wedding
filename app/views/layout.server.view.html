@@ -34,7 +34,11 @@
     <link href="/modules/core/img/brand/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
     <!--Application CSS Files-->
+    {% if isProd %}
+    <link rel="stylesheet" href="dist/{{ staticFiles['stylesheets/gloabl.css'] }}">
+    {% else %}
     {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+    {% endif %}
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7114754/783686/css/fonts.css" />
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
@@ -59,7 +63,7 @@
 
     <!--Application JavaScript Files-->
     {% if isProd %}
-    <script src="dist/app.js"></script>
+    <script src="dist/{{ staticFiles['javascript/app.js'] }}"></script>
     {% else %}
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>

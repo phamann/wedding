@@ -8,6 +8,8 @@ var livereload = require('gulp-livereload');
 var shell = require('gulp-shell');
 var uglify = require('gulp-uglify');
 var _ = require('lodash');
+var rev = require('gulp-rev');
+var del = require('del');
 
 var DIST = 'public/dist/',
     watchFiles = {
@@ -21,6 +23,10 @@ var DIST = 'public/dist/',
   allJsFiles = _.merge(watchFiles.serverJS, watchFiles.clientJS),
   allFiles = _.chain(watchFiles).map(function(i) { return i }).flatten().value();
 
+gulp.task('clean', function() {
+  del([DIST + '**/*']);
+});
+
 gulp.task('reload', function(){
   console.log('fooo');
   livereload();
@@ -33,7 +39,7 @@ gulp.task('watch', function () {
     gulp.watch(watchFiles.clientCSS, ['sass']);
 });
 
-gulp.task('nodemon', function () {
+gulp.task('nodemon', ['dist'], function () {
   nodemon({
         script: 'server.js',
         ext: 'html js',
@@ -49,7 +55,7 @@ gulp.task('jshint', function() {
         .pipe(livereload());
 });
 
-gulp.task('sass', function () {
+gulp.task('sass', ['clean'], function () {
     gulp.src(watchFiles.clientCSS)
         .pipe(sass({
             outputStyle: 'compressed',
@@ -60,14 +66,22 @@ gulp.task('sass', function () {
         .pipe(livereload());
 });
 
-gulp.task('jspm', shell.task(['jspm bundle-sfx lib/app ' + DIST + 'app.js']));
+gulp.task('jspm', ['clean'], shell.task(['jspm bundle-sfx lib/app ' + DIST + 'javascript/app.js']));
 
-gulp.task('compress', ['jspm'], function() {
-    gulp.src(DIST + 'app.js')
+gulp.task('compress', ['clean', 'jspm'], function() {
+    gulp.src(DIST + 'javascript/app.js')
         .pipe(uglify())
         .pipe(gulp.dest(DIST))
 });
 
-gulp.task('dist', ['sass', 'jspm', 'compress']);
-gulp.task('default', ['sass', 'watch', 'nodemon']);
+gulp.task('rev', ['clean', 'sass', 'jspm','compress'], function () {
+    return gulp.src(DIST + '**/*')
+        .pipe(rev())
+        .pipe(gulp.dest(DIST))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest(DIST));
+});
+
+gulp.task('dist', ['clean','sass', 'jspm', 'compress', 'rev']);
+gulp.task('default', ['dist', 'watch', 'nodemon']);
 

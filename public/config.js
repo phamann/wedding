@@ -14,6 +14,7 @@ System.config({
     "angular-animate": "github:angular/bower-angular-animate@1.3.9",
     "angular-bootstrap": "github:angular-ui/bootstrap-bower@0.12.0",
     "angular-cookies": "github:angular/bower-angular-cookies@1.3.9",
+    "angular-flash": "github:remind101/angular-flash@0.0.8",
     "angular-mocks": "github:angular/bower-angular-mocks@1.3.9",
     "angular-resource": "github:angular/bower-angular-resource@1.3.10",
     "angular-sanitize": "github:angular/bower-angular-sanitize@1.3.9",
@@ -24,7 +25,6 @@ System.config({
     "lodash": "npm:lodash@3.1.0",
     "nodelibs-process": "github:jspm/nodelibs-process@0.1.1",
     "process": "npm:process@0.10.0",
-    "angular-flash": "github:remind101/angular-flash@0.0.8",
     "text": "github:systemjs/plugin-text@0.0.2",
     "ui-utils": "github:angular-ui/ui-utils@0.2.1",
     "github:angular-ui/bootstrap-bower@0.12.0": {
