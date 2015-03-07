@@ -35,7 +35,7 @@
 
     <!--Application CSS Files-->
     {% if isProd %}
-    <link rel="stylesheet" href="dist/{{ staticFiles['stylesheets/gloabl.css'] }}">
+    <link rel="stylesheet" href="dist/{{ staticFiles['stylesheets/global.css'] }}">
     {% else %}
     {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
     {% endif %}
