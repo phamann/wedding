@@ -7,6 +7,10 @@ var init = require('./config/init')(),
     mongoose = require('mongoose'),
     chalk = require('chalk');
 
+if(process.env.NODE_ENV === 'production') {
+    var newrelic = require('newrelic');
+}
+
 /**
  * Main application entry file.
  * Please note that the order of loading is important.
