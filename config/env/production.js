@@ -8,7 +8,7 @@ module.exports = {
         keywords: 'Wedding'
    },
     mailer: {
-        from: process.env.POSTMARK_INBOUND_ADDRESS,
+        from: 'info@patrickandgemma.com',
         options: {
             service: 'Postmark',
             host: process.env.POSTMARK_SMTP_SERVER,
