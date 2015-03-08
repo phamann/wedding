@@ -11,7 +11,7 @@ module.exports = {
         from: process.env.POSTMARK_INBOUND_ADDRESS,
         options: {
             service: 'Postmark',
-            host: process.env.POSTMARK_SMTP_SERVER
+            host: process.env.POSTMARK_SMTP_SERVER,
             auth: {
                 user: process.env.POSTMARK_API_TOKEN,
                 pass: process.env.POSTMARK_API_TOKEN
