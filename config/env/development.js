@@ -3,7 +3,9 @@
 module.exports = {
     db: 'mongodb://localhost/wedding-dev',
     app: {
-        title: 'wedding - Development Environment'
+        title: 'Patrick and Gemma – July 18th 2015',
+        description: 'Together with their families, Gemma & Patrick request the pleasure of your company at their wedding On Saturday 18th July 2015 at 2.00 pm',
+        keywords: 'Wedding'
     },
     mailer: {
         from: process.env.MAILER_FROM || 'MAILER_FROM',
