@@ -6,13 +6,11 @@ import './controllers/header.client.controller';
 import './controllers/home.client.controller';
 import './controllers/location.client.controller';
 import './controllers/accomodation.client.controller';
-import './controllers/gettinghere.client.controller';
 import './controllers/weekend.client.controller';
 
 import homeTmpl from 'lib/modules/core/views/home.client.view.html!text';
 import locationTmpl from 'lib/modules/core/views/location.client.view.html!text';
 import accomodationTmpl from 'lib/modules/core/views/accomodation.client.view.html!text';
-import gettingHereTmpl from 'lib/modules/core/views/gettinghere.client.view.html!text';
 import weekendTmpl from 'lib/modules/core/views/weekend.client.view.html!text';
 
 export var core = angular.module('core', [
@@ -20,7 +18,6 @@ export var core = angular.module('core', [
     'core.home.controller',
     'core.location.controller',
     'core.accomodation.controller',
-    'core.gettinghere.controller',
     'core.weekend.controller'
 ]);
 
@@ -48,12 +45,7 @@ core.config(['$stateProvider', '$urlRouterProvider',
             controller: 'AccomodationController'
         });
 
-        $stateProvider.state('gettinghere', {
-            url: '/getting-here',
-            template: gettingHereTmpl,
-            controller: 'GettingHereController'
-        });
-         $stateProvider.state('weekend', {
+        $stateProvider.state('weekend', {
             url: '/the-weekend',
             template: weekendTmpl,
             controller: 'WeekendController'

@@ -15,7 +15,6 @@ header.controller('HeaderController', ['$scope', 'Authentication', 'Menus',
 
         Menus.addMenuItem('topbar', 'The weekend', 'the-weekend', 'item', 'weekend', true);
         Menus.addMenuItem('topbar', 'Location', 'location', 'item', 'location', true);
-        Menus.addMenuItem('topbar', 'Getting here', 'getting-here', 'item', 'gettinghere', true);
         Menus.addMenuItem('topbar', 'Accomodation', 'accomodation', 'item', 'accomodation', true);
         Menus.addMenuItem('topbar', 'Users', 'users', 'item', 'users', false, ['admin']);
 
