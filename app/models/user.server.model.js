@@ -57,7 +57,7 @@ var UserSchema = new Schema({
     password: {
         type: String,
         default: '',
-        validate: [validateLocalStrategyPassword, 'Password should be longer']
+        validate: [validateLocalStrategyPassword, 'Password should be at least 6 characters long']
     },
     transport: {
         type: String,
