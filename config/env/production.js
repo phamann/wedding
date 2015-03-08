@@ -8,12 +8,13 @@ module.exports = {
         keywords: 'Wedding'
    },
     mailer: {
-        from: process.env.MAILER_FROM || 'MAILER_FROM',
+        from: process.env.POSTMARK_INBOUND_ADDRESS,
         options: {
-            service: process.env.MAILER_SERVICE_PROVIDER || 'MAILER_SERVICE_PROVIDER',
+            service: 'Postmark',
+            host: process.env.POSTMARK_SMTP_SERVER
             auth: {
-                user: process.env.MAILER_EMAIL_ID || 'MAILER_EMAIL_ID',
-                pass: process.env.MAILER_PASSWORD || 'MAILER_PASSWORD'
+                user: process.env.POSTMARK_API_TOKEN,
+                pass: process.env.POSTMARK_API_TOKEN
             }
         }
     }
