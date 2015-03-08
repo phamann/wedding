@@ -72,6 +72,13 @@ module.exports = function(db) {
         // Disable views cache
         app.set('view cache', false);
     } else if (process.env.NODE_ENV === 'production') {
+        //Force all requests in production to be served over TLS
+        app.use(function (req, res, next) {
+            if (req.headers['x-forwarded-proto'] !== 'https') {
+                return res.redirect(['https://', req.get('Host'), req.url].join(''));
+            }
+            return next();
+        });
         app.locals.cache = 'memory';
     }
 
