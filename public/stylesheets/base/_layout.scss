@@ -17,14 +17,16 @@ body {
     position: relative;
     max-width: 1024px;
     margin: 10px;
-    padding-bottom: 20px;
     border-top: none;
     background: white;
+
+    > hr {
+        margin: 15px 15px 5px;
+    }
 
     @media (min-width: 800px) {
         border: 10px solid rgba($c-background, 0.05);
         margin: 40px auto;
-        padding-bottom: 40px;
     }
 }
 
@@ -76,6 +78,15 @@ body {
     &:hover,
     &:focus {
         color: $c-accent;
+    }
+}
+
+footer .breadcrumb  {
+    background: none;
+    margin: 0;
+
+    @media (max-width: 600px) {
+        a { font-size: 10px; }
     }
 }
 
