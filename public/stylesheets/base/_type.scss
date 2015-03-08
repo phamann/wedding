@@ -23,6 +23,8 @@ p, li, em, a {
     }
 }
 
+a { color: $c-accent; }
+
 .navbar-brand {
     @include f-heading;
     color: $c-accent !important;
