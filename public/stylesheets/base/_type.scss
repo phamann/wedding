@@ -37,3 +37,11 @@ a { color: $c-accent; }
         h2 { font-size: 32px; }
     }
 }
+
+.poem p {
+    color: $c-accent;
+    font-style: italic;
+    // font-size: 24px;
+    // font-weight: bold;
+    // text-align: center;
+}
