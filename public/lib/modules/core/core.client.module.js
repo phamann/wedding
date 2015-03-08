@@ -7,18 +7,21 @@ import './controllers/home.client.controller';
 import './controllers/location.client.controller';
 import './controllers/accomodation.client.controller';
 import './controllers/gettinghere.client.controller';
+import './controllers/weekend.client.controller';
 
 import homeTmpl from 'lib/modules/core/views/home.client.view.html!text';
 import locationTmpl from 'lib/modules/core/views/location.client.view.html!text';
 import accomodationTmpl from 'lib/modules/core/views/accomodation.client.view.html!text';
 import gettingHereTmpl from 'lib/modules/core/views/gettinghere.client.view.html!text';
+import weekendTmpl from 'lib/modules/core/views/weekend.client.view.html!text';
 
 export var core = angular.module('core', [
     'core.header.controller',
     'core.home.controller',
     'core.location.controller',
     'core.accomodation.controller',
-    'core.gettinghere.controller'
+    'core.gettinghere.controller',
+    'core.weekend.controller'
 ]);
 
 core.config(['$stateProvider', '$urlRouterProvider',
@@ -49,6 +52,11 @@ core.config(['$stateProvider', '$urlRouterProvider',
             url: '/getting-here',
             template: gettingHereTmpl,
             controller: 'GettingHereController'
+        });
+         $stateProvider.state('weekend', {
+            url: '/the-weekend',
+            template: weekendTmpl,
+            controller: 'WeekendController'
         });
     }
 ]);
