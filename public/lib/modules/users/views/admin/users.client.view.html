@@ -20,6 +20,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>RSVP</th>
                             <th>Transport</th>
                             <th>Actions</th>
                         </tr>
@@ -28,6 +29,7 @@
                         <tr ng-repeat="user in users">
                             <td data-ng-bind="user.firstName"></td>
                             <td data-ng-bind="user.email"></td>
+                            <td data-ng-bind="user.rsvp ? 'Yes' : 'No'"></td>
                             <td data-ng-bind="user.transport"></td>
                             <td>
                                 <a class="btn btn-primary btn-xs" ui-sref="user({id:user._id})">View</a>

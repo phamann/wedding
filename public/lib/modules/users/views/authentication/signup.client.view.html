@@ -12,7 +12,18 @@
                 </div>
                 <form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
                    <fieldset>
-                        <div class="form-group" ng-class="{ 'has-error': userForm.firstName.$invalid && userForm.firstName.$touched }">
+                       <div class="form-group">
+                           <label class="col-sm-2 control-label" for="">RSVP</label>
+                           <div class="col-sm-8">
+                               <label class="radio-inline" for="rsvpAccept">
+                                   <input type="radio" name="rsvp" value="true" id="rsvpAccept" data-ng-model="credentials.rsvp" ng-required="!credentials.rsvp" />Joyfully accept
+                               </label>
+                                <label class="radio-inline" for="rsvpDecline">
+                                   <input type="radio" name="rsvp" value="false" id="rsvpDecline" data-ng-model="credentials.rsvp" ng-required="!credentials.rsvp" />Regretfully decline
+                               </label>
+                            </div>
+                       </div>
+                       <div class="form-group" ng-class="{ 'has-error': userForm.firstName.$invalid && userForm.firstName.$touched }">
                             <label for="firstName" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-8">
                                 <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="credentials.firstName" placeholder="First Name" required>
@@ -30,6 +41,9 @@
                                 <input type="email" id="email" name="email" class="form-control" data-ng-model="credentials.email"  placeholder="Email" required ng-pattern="/.+\@.+\..+/">
                             </div>
                         </div>
+                        <hr/>
+                    </fieldset>
+                    <fieldset ng-show="userForm.rsvp.$valid && credentials.rsvp === 'true'">
                         <div class="form-group">
                             <label for="transport" class="col-sm-2 control-label">Transport</label>
                             <div class="col-sm-8">
@@ -39,6 +53,8 @@
                             </div>
                         </div>
                         <hr/>
+                    </fieldset>
+                    <fieldset ng-show="userForm.rsvp.$valid && credentials.rsvp === 'true'">
                         <div class="form-group">
                             <label for="menu" class="col-sm-2 control-label">Menu</label>
                             <div class="col-sm-8">
@@ -46,22 +62,26 @@
                             </div>
                         </div>
                         <hr/>
+                    </fieldset>
+                    <fieldset ng-show="userForm.rsvp.$valid && credentials.rsvp === 'true'">
                         <div class="form-group" ng-class="{ 'has-error': userForm.username.$invalid && userForm.username.$touched }">
                             <label for="username" class="col-sm-2 control-label">Username</label>
                             <div class="col-sm-8">
-                                <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" required>
+                                <input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" value="" required>
                             </div>
                         </div>
                         <div class="form-group" ng-class="{ 'has-error': userForm.password.$invalid && userForm.password.$touched }">
                             <label for="password" class="col-sm-2 control-label">Password</label>
                             <div class="col-sm-8">
                                 <input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password" aria-describedby="passwordHelp" required ng-minlength="6">
-                                <span id="passwordHelp" class="help-block">Must be at least 6 characters long.</span>
+                                <span id="passwordHelp" class="help-block" ng-show="userForm.password.$invalid && userForm.password.$touched">Must be at least 6 characters long.</span>
                             </div>
                         </div>
+                    </fieldset>
+                </fieldset>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
-                                <button type="submit" class="btn btn-large btn-success">RSVP</button>&nbsp; or&nbsp;
+                                <button ng-disabled="credentials.rsvp !== 'false' && userForm.$invalid" type="submit" class="btn btn-large btn-success">RSVP</button>&nbsp; or&nbsp;
                                 <a href="/#!/signin" class="show-signup">Login</a>
                             </div>
                         </div>

@@ -15,9 +15,14 @@ auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Au
         ];
 
         $scope.signup = function() {
+
+            //Cast rsvp to boolean
             $http.post('/auth/signup', $scope.credentials).success(function(response) {
+
                 // If successful we assign the response to the global user model
-                $scope.authentication.user = response;
+                if($scope.credentials.rsvp === 'true') {
+                    $scope.authentication.user = response;
+                }
 
                 $flash(`Congrats! You successfully RSVP'd for our wedding,
                        keep an eye on your email for further details.`,

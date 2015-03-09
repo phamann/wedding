@@ -18,13 +18,26 @@ var validateLocalStrategyProperty = function(property) {
  * A Validation function for local strategy password
  */
 var validateLocalStrategyPassword = function(password) {
-    return (this.provider !== 'local' || (password && password.length > 6));
+    return (this.provider !== 'local' || !this.rsvp || (password && password.length > 6));
 };
+
+/**
+* A Validation function for required RSVP properties
+ */
+var validateRsvpRequiedProperty = function(property) {
+    return (this.rsvp == 'true') ? property.length > 0 : true;
+};
+
 
 /**
  * User Schema
  */
 var UserSchema = new Schema({
+    rsvp : {
+        type: Boolean,
+        trim: true,
+        required: 'Please select your rsvp choice'
+    },
     firstName: {
         type: String,
         trim: true,
@@ -50,8 +63,9 @@ var UserSchema = new Schema({
     },
     username: {
         type: String,
-        unique: 'testing error message',
-        required: 'Please fill in a username',
+        sparse: true,
+        unique: true,
+        validate: [validateRsvpRequiedProperty, 'Please fill in a username'],
         trim: true
     },
     password: {
@@ -61,7 +75,7 @@ var UserSchema = new Schema({
     },
     transport: {
         type: String,
-        required: 'Please fill in a transport'
+        validate: [validateRsvpRequiedProperty, 'Please fill in a transport']
     },
     salt: {
         type: String
