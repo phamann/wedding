@@ -56,9 +56,8 @@ module.exports = function(db) {
     // Showing stack errors
     app.set('showStackError', true);
 
-    // Set swig as the template enginei
+    // Set swig as the template engine
     app.engine('server.view.html', consolidate[config.templateEngine]);
-
 
     // Set views path and view engine
     app.set('view engine', 'server.view.html');
@@ -138,6 +137,9 @@ module.exports = function(db) {
             error: err.stack
         });
     });
+
+    var core = require('../app/controllers/core.server.controller');
+    app.route('*').get(core.index);
 
     // Assume 404 since no middleware responded
     app.use(function(req, res) {

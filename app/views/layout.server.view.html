@@ -35,9 +35,9 @@
 
     <!--Application CSS Files-->
     {% if isProd %}
-    <link rel="stylesheet" href="dist/{{ staticFiles['stylesheets/global.css'] }}">
+    <link rel="stylesheet" href="/dist/{{ staticFiles['stylesheets/global.css'] }}">
     {% else %}
-    {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}
+    {% for cssFile in cssFiles %}<link rel="stylesheet" href="/{{cssFile}}">{% endfor %}
     {% endif %}
     <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7114754/783686/css/fonts.css" />
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
@@ -65,7 +65,7 @@
 
     <!--Application JavaScript Files-->
     {% if isProd %}
-    <script src="dist/{{ staticFiles['javascript/app.js'] }}"></script>
+    <script src="/dist/{{ staticFiles['javascript/app.js'] }}"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -76,8 +76,8 @@
         ga('send', 'pageview');
     </script>
     {% else %}
-    <script src="jspm_packages/system.js"></script>
-    <script src="config.js"></script>
+    <script src="/jspm_packages/system.js"></script>
+    <script src="/config.js"></script>
     <script>
         System.baseURL = '/';
         // `app` is our project name, corresponding to the local `lib` folder

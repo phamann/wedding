@@ -37,15 +37,15 @@ var app = angular.module(
 );
 
 app.config(['$locationProvider', '$flashProvider',
-    // function($locationProvider) {
+    function($locationProvider) {
     // Use real URLs (with History API) instead of hashbangs
-    // $locationProvider.html5Mode({enabled: true, requireBase: false});
-    // }
-
-    function($locationProvider, $flashProvider){
-        $locationProvider.hashPrefix('!');
-        $flashProvider.setRouteChangeSuccess('$stateChangeSuccess');
+    $locationProvider.html5Mode({enabled: true, requireBase: false});
     }
+
+    // function($locationProvider, $flashProvider){
+    //     $locationProvider.hashPrefix('!');
+    //     $flashProvider.setRouteChangeSuccess('$stateChangeSuccess');
+    // }
 ]);
 
 app.run(function($templateCache) {
