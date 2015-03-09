@@ -23,6 +23,8 @@ p, li, em, a {
     }
 }
 
+.radio-inline { @include f-copy; }
+
 a { color: $c-accent; }
 
 .navbar-brand {
