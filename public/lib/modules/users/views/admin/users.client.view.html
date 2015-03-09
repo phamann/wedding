@@ -30,7 +30,7 @@
                             <td data-ng-bind="user.firstName"></td>
                             <td data-ng-bind="user.email"></td>
                             <td data-ng-bind="user.rsvp ? 'Yes' : 'No'"></td>
-                            <td data-ng-bind="user.transport"></td>
+                            <td data-ng-bind="user.rsvp ? user.transport : 'n/a'"></td>
                             <td>
                                 <a class="btn btn-primary btn-xs" ui-sref="user({id:user._id})">View</a>
                                 <a class="btn btn-danger btn-xs"  ng-click="deleteUser(user)">Delete</a>
