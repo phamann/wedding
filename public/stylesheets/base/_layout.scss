@@ -140,6 +140,12 @@ footer .breadcrumb  {
     }
 }
 
+.radio-inline {
+    @media (max-width: 360px) {
+        margin-left: 0 !important;
+    }
+}
+
 .btn-primary {
     background-color: white;
     border-color: $c-accent;
