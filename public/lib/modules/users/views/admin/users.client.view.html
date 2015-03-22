@@ -8,18 +8,7 @@
                 </ol>
             </div>
         </div>
-        <div data-ng-show="error" class="alert alert-danger" role="alert">
-            <strong data-ng-bind="error"></strong>
-            <button type="button" ng-click="message.remove()" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div data-ng-show="success" class="alert alert-success" role="alert">
-            <strong data-ng-bind="success"></strong>
-            <button type="button" ng-click="message.remove()" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
         <div class="row">
             <div class="col-md-12">
                 <h1 class="page-header">Guests</h1>

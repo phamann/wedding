@@ -20,14 +20,24 @@ users.controller('UsersController', ['$scope', '$http', '$location', '$anchorScr
             });
         }
 
+        $scope.alerts = [];
+
+        $scope.addAlert = function(alert) {
+            $scope.alerts.push(alert);
+        }
+
+        $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+        };
+
         $scope.deleteUser = function(user) {
             if (window.confirm("Are you sure you want to remove " + user.displayName  + " as a guest?")) {
                 User.delete({ id: user._id }).$promise.then(function(response){
-                    $scope.success = response.message
+                    $scope.addAlert({ msg: response.message, type: 'success' });
                     listUsers();
                     $anchorScroll();
                 }).catch(function(response){
-                    $scope.error = response.message;
+                    $scope.addAlert({msg: response.message, type: 'danger' });
                     $anchorScroll();
                 });
             }
