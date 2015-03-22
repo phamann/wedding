@@ -45,8 +45,12 @@ auth.controller('AuthenticationController', ['$scope', '$http', '$location', 'Au
                 // If successful we assign the response to the global user model
                 $scope.authentication.user = response;
 
-                // And redirect to the index page
-                $location.path('/');
+                // Redirect admins to users page
+                if(response.roles.indexOf('admin') > -1) {
+                    $location.path('/users');
+                } else {
+                    $location.path('/');
+                }
             }).error(function(response) {
                 $scope.error = response.message;
             });

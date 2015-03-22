@@ -43,6 +43,18 @@ exports.update = function(req, res) {
 };
 
 /**
+ * Delete user
+ */
+exports.remove = function(req, res) {
+    User.findOne({
+        _id: req.params.id
+    }).remove(function (err, user) {
+        if (err) return res.status(400).send({ message: errorHandler.getErrorMessage(err)});
+        res.json({ message: "Successfully deleted user " + req.params.id });
+    });
+}
+
+/**
  * List of Users
  */
 exports.list = function(req, res) {

@@ -10,6 +10,9 @@ user.factory('User', ['$resource', function($resource) {
             },
             update: {
                 method: 'PUT'
+            },
+            'delete': {
+                method: 'DELETE'
             }
         });
     }
