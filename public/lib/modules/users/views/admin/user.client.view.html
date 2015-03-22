@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                  <li><a ui-sref="home">Home</a></li>
-                  <li href="/admin">Admin</li>
-                  <li><a ui-sref="users">Users</a></li>
-                  <li class="active">Edit</li>
+                    <li><a ui-sref="home">Home</a></li>
+                    <li href="/admin">Admin</li>
+                    <li><a ui-sref="users">Users</a></li>
+                    <li class="active">Edit</li>
                 </ol>
-                <h3 class="page-header">Edit: {{user.firstName}} {{user.lastName}}</h3>
+                <h3 class="page-header">Edit: {{editingUser.firstName}} {{editingUser.lastName}}</h3>
                 <div class="col-md-4 alert alert-success alert-dismissible" role="alert" data-ng-show="success">
-                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <strong>Details updated Successfully</strong>
                 </div>
                 <div class="alert alert-danger alert-dismissible" role="alert" data-ng-show="error">
@@ -20,31 +20,66 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-8 col-md-4">
-                <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="form-horizontal" autocomplete="off">
+            <div class="col-xs-10 col-md-8">
+                <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
                     <fieldset>
                         <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+                            <label class="col-sm-2 control-label" for="">RSVP</label>
+                            <div class="col-sm-8">
+                                <label class="radio-inline" for="rsvpAccept">
+                                    <input type="radio" name="rsvp" value="true" id="rsvpAccept" data-ng-model="editingUser.rsvp" ng-required="!editingUser.rsvp" />Joyfully accept
+                                </label>
+                                <label class="radio-inline" for="rsvpDecline">
+                                    <input type="radio" name="rsvp" value="false" id="rsvpDecline" data-ng-model="editingUser.rsvp" ng-required="!editingUser.rsvp" />Regretfully decline
+                                </label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+                            <label class="col-sm-2 control-label" for="firstName">First Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="editingUser.firstName" placeholder="First Name">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+                            <label class="col-sm-2 control-label" for="lastName">Last Name</label>
+                            <div class="col-sm-8">
+                                <input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="editingUser.lastName" placeholder="Last Name">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+                            <label class="col-sm-2 control-label"  for="email">Email</label>
+                            <div class="col-sm-8">
+                                <input type="email" id="email" name="email" class="form-control" data-ng-model="editingUser.email" placeholder="Email">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-large btn-primary">Save</button>
-                        </div>
-                    </fieldset>
-                </form>
+                            <hr/>
+                        <fieldset ng-show="editingUser.rsvp === 'true'">
+                            <div class="form-group">
+                                <label for="transport" class="col-sm-2 control-label">Transport</label>
+                                <div class="col-sm-8">
+                                    <select ng-model="editingUser.transport" ng-options="transport.value as transport.label for transport in transportOptions" class="form-control">
+                                        <option value="">-- Choose --</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr/>
+                        </fieldset>
+                        <fieldset ng-show="editingUser.rsvp === 'true'">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="username">Username</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="username" name="username" class="form-control" data-ng-model="editingUser.username" placeholder="Username">
+                                </div>
+                            </div>
+                        </fieldset>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2">
+                                    <button type="submit" class="btn btn-large btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>

@@ -9,6 +9,8 @@ settings.controller('SettingsController', ['$scope', '$http', '$location', 'User
         // If user is not signed in then redirect back home
         if (!$scope.user) $location.path('/');
 
+        $scope.user.rsvp = $scope.user.rsvp.toString();
+
         $scope.transportOptions = [
             {label: 'Bus from town', value: 'bus'},
             {label: 'Not needed', value: 'none'}

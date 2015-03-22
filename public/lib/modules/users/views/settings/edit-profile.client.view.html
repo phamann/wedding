@@ -24,6 +24,17 @@
                     class="signin form-horizontal" autocomplete="off">
                     <fieldset>
                         <div class="form-group">
+                            <label class="col-sm-2 control-label" for="">RSVP</label>
+                            <div class="col-sm-8">
+                                <label class="radio-inline" for="rsvpAccept">
+                                    <input type="radio" name="rsvp" value="true" id="rsvpAccept" data-ng-model="user.rsvp" ng-required="!user.rsvp" />Joyfully accept
+                                </label>
+                                <label class="radio-inline" for="rsvpDecline">
+                                    <input type="radio" name="rsvp" value="false" id="rsvpDecline" data-ng-model="user.rsvp" ng-required="!user.rsvp" />Regretfully decline
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="firstName" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-8">
                                 <input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
@@ -41,29 +52,36 @@
                                 <input type="email" id="email" name="email" class="form-control" data-ng-model="user.email"     placeholder="Email">
                             </div>
                         </div>
-                         <div class="form-group">
-                            <label for="transport" class="col-sm-2 control-label">Transport</label>
-                            <div class="col-sm-8">
-                                <select  ng-options="transport.value as transport.label for transport in transportOptions" data-ng-model="user.transport" class="form-control">
-                                    <option value="">-- Choose --</option>
-                                </select>
-                            </div>
-                        </div>
                         <hr/>
-                        <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label">Username</label>
-                            <div class="col-sm-8">
-                                <input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="transport" class="col-sm-2 control-label">Transport</label>
+                                <div class="col-sm-8">
+                                    <select  ng-options="transport.value as transport.label for transport in transportOptions" data-ng-model="user.transport" class="form-control">
+                                        <option value="">-- Choose --</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-8">
-                                <button type="submit" class="btn btn-large btn-primary">Save</button>
+                            <hr/>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">Username</label>
+                                <div class="col-sm-8">
+                                    <input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+                                </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </form>
+                            <hr/>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-8">
+                                    <button type="submit" class="btn btn-large btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>

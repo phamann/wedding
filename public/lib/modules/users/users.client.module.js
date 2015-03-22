@@ -98,9 +98,5 @@ users.config(['$stateProvider',
             url: '/user/:id',
             templateUrl: '/lib/modules/users/views/admin/user.client.view.html'
         })
-        // state('deleteUser', {
-        //     url: '/user/:id',
-        //     templateUrl: 'lib/modules/users/views/admin/user.client.view.html'
-        // });
     }
 ]);
