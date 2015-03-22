@@ -3,41 +3,70 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                  <li><a ui-sref="home">Home</a></li>
-                  <li href="/admin">Admin</li>
-                  <li><a class="active">Users</a></li>
+                    <li><a ui-sref="home">Home</a></li>
+                    <li href="/admin">Admin</li>
+                    <li><a class="active">Users</a></li>
                 </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="page-header">Summary</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Yes</td>
+                            <td data-ng-bind="summary.yes"></td>
+                        </tr>
+                        <tr>
+                            <td>No</td>
+                            <td data-ng-bind=summary.no></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th data-ng-bind="summary.total"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <h3 class="page-header">Users</h3>
                 <a class="btn btn-success btn-sm pull-right" ui-serf="signup">
                     New
                 </a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-10 col-md-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>RSVP</th>
-                            <th>Transport</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="user in users">
-                            <td data-ng-bind="user.firstName"></td>
-                            <td data-ng-bind="user.email"></td>
-                            <td data-ng-bind="user.rsvp ? 'Yes' : 'No'"></td>
-                            <td data-ng-bind="user.rsvp ? user.transport : 'n/a'"></td>
-                            <td>
-                                <a class="btn btn-primary btn-xs" ui-sref="user({id:user._id})">View</a>
-                                <a class="btn btn-danger btn-xs"  ng-click="deleteUser(user)">Delete</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>RSVP</th>
+                                <th>Transport</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in users">
+                                <td data-ng-bind="user.firstName"></td>
+                                <td data-ng-bind="user.email"></td>
+                                <td data-ng-bind="user.rsvp ? 'Yes' : 'No'"></td>
+                                <td data-ng-bind="user.rsvp ? user.transport : 'n/a'"></td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs" ui-sref="user({id:user._id})">View</a>
+                                    <a class="btn btn-danger btn-xs"  ng-click="deleteUser(user)">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

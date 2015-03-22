@@ -9,7 +9,13 @@ users.controller('UsersController', ['$scope', '$http', '$location', 'User', 'Au
         // If user is not signed in then redirect back home
         if (!$scope.user || $scope.user.roles.indexOf('admin') === -1) $location.path('/');
 
-        $scope.users = User.query();
-
+        User.query().$promise.then(function(users){
+            $scope.users = users;
+            $scope.summary = {
+                yes  : users.filter(function(u){ console.log(u); return u.rsvp; }).length,
+                no   : users.filter(function(u){ return !u.rsvp; }).length,
+                total: users.length
+            }
+        });
     }
 ]);
