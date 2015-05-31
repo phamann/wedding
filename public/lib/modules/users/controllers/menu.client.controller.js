@@ -2,8 +2,8 @@
 
 export var menu = angular.module('users.menu.controller', []);
 
-menu.controller('MenuController', ['$scope', '$http', '$location', 'Authentication', '$flash',
-    function($scope, $http, $location, Authentication, $flash) {
+menu.controller('MenuController', ['$scope', '$http', '$location', '$anchorScroll', 'Authentication', '$flash',
+    function($scope, $http, $location, $anchorScroll, Authentication, $flash) {
         $scope.authentication = Authentication;
 
         $scope.transportOptions = [
@@ -30,13 +30,15 @@ menu.controller('MenuController', ['$scope', '$http', '$location', 'Authenticati
 
             $http.post('/menu', $scope.menuSelection).success(function(response) {
 
-                $flash('Thanks!',
+                $flash('Thanks. We hope you enjoy the food!',
                        {
                            type: 'success',
                            persist: 1,
                            duration: 10000
                        }
                 );
+
+                $anchorScroll();
 
                 // And redirect to the index page
                 $location.path('/');

@@ -4,22 +4,26 @@ import angular from 'angular';
 
 import './services/authentication.client.service';
 import './services/users.client.service';
+import './services/menus.client.service';
 import './controllers/authentication.client.controller';
 import './controllers/password.client.controller';
 import './controllers/settings.client.controller';
 import './controllers/users.client.controller';
 import './controllers/user.client.controller';
 import './controllers/menu.client.controller';
+import './controllers/menus.client.controller';
 
 export var users = angular.module('users', [
     'users.auth.service',
     'users.user.service',
+    'users.menu.service',
     'users.auth.controller',
     'users.password.controller',
     'users.settings.controller',
     'users.users.controller',
     'users.user.controller',
-    'users.menu.controller'
+    'users.menu.controller',
+    'users.menus.controller'
 ]);
 
 // Config HTTP Error Handling
@@ -72,9 +76,13 @@ users.config(['$stateProvider',
             url: '/signup',
             templateUrl: '/lib/modules/users/views/authentication/signup.client.view.html'
         }).
-        state('menu', {
-            url: '/menu',
+        state('food', {
+            url: '/food',
             templateUrl: '/lib/modules/users/views/menu/menu.client.view.html'
+        }).
+        state('menus', {
+            url: '/menus',
+            templateUrl: '/lib/modules/users/views/admin/menus.client.view.html'
         }).
         state('signin', {
             url: '/signin',

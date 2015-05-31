@@ -36,9 +36,9 @@ exports.save = function(req, res) {
 exports.remove = function(req, res) {
     Menu.findOne({
         _id: req.params.id
-    }).remove(function (err, user) {
+    }).remove(function (err, menu) {
         if (err) return res.status(400).send({ message: errorHandler.getErrorMessage(err)});
-        res.json({ message: "Successfully deleted menu " + req.params.id });
+        res.json({ message: "Successfully deleted menu " + menu.fullName });
     });
 }
 

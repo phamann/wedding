@@ -1,0 +1,67 @@
+<section data-ng-controller="MenusController">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a ui-sref="home">Home</a></li>
+                    <li>Menus</li>
+                </ol>
+            </div>
+        </div>
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">Food</h1>
+                <h3>Summary</h3>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr  ng-repeat="(key, value) in summary">
+                            <td data-ng-bind="key"></td>
+                            <td data-ng-bind="value"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th data-ng-bind="summary.total"></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>List</h3>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Starter</th>
+                                <th>Main</th>
+                                <th>Dessert</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="menu in menus">
+                                <td data-ng-bind="menu.fullName"></td>
+                                <td data-ng-bind="menu.starter"></td>
+                                <td data-ng-bind="menu.main"></td>
+                                <td data-ng-bind="menu.desert"></td>
+                                <td>
+                                    <a class="btn btn-primary btn-xs" ui-sref="Menu({id:menu._id})">View</a>
+                                    <a class="btn btn-danger btn-xs"  ng-click="deleteMenu(menu)">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
