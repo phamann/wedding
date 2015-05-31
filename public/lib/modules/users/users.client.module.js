@@ -9,6 +9,7 @@ import './controllers/password.client.controller';
 import './controllers/settings.client.controller';
 import './controllers/users.client.controller';
 import './controllers/user.client.controller';
+import './controllers/menu.client.controller';
 
 export var users = angular.module('users', [
     'users.auth.service',
@@ -17,7 +18,8 @@ export var users = angular.module('users', [
     'users.password.controller',
     'users.settings.controller',
     'users.users.controller',
-    'users.user.controller'
+    'users.user.controller',
+    'users.menu.controller'
 ]);
 
 // Config HTTP Error Handling
@@ -69,6 +71,10 @@ users.config(['$stateProvider',
         state('signup', {
             url: '/signup',
             templateUrl: '/lib/modules/users/views/authentication/signup.client.view.html'
+        }).
+        state('menu', {
+            url: '/menu',
+            templateUrl: '/lib/modules/users/views/menu/menu.client.view.html'
         }).
         state('signin', {
             url: '/signin',
