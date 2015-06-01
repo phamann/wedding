@@ -15,10 +15,10 @@ menus.controller('MenusController', ['$scope', '$http', '$location', '$anchorScr
                 $scope.summary = {
                     'melon'  : menus.filter(function(m){ return m.starter === 'melon'; }).length,
                     'scallops'  : menus.filter(function(m){ return m.starter === 'scallops'; }).length,
-                    'beef'  : menus.filter(function(m){ return m.starter === 'beef'; }).length,
-                    'sea bass'  : menus.filter(function(m){ return m.starter === 'sea bass'; }).length,
-                    'creme brulee'  : menus.filter(function(m){ return m.starter === 'creme brulee'; }).length,
-                    'eton mess'  : menus.filter(function(m){ return m.starter === 'eton mess'; }).length,
+                    'beef'  : menus.filter(function(m){ return m.main === 'beef'; }).length,
+                    'sea bass'  : menus.filter(function(m){ return m.main === 'sea bass'; }).length,
+                    'creme brulee'  : menus.filter(function(m){ return m.dessert === 'creme brulee'; }).length,
+                    'eton mess'  : menus.filter(function(m){ return m.dessert === 'eton mess'; }).length,
                     'total': menus.length
                 };
             });

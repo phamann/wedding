@@ -26,10 +26,10 @@ var MenuSchema = new Schema({
         trim: true,
         required: 'Please select a main.'
     },
-    desert: {
+    dessert: {
         type: String,
         trim: true,
-        required: 'Please select a desert'
+        required: 'Please select a dessert'
     },
     updated: {
         type: Date

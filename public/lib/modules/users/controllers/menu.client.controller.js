@@ -21,7 +21,7 @@ menu.controller('MenuController', ['$scope', '$http', '$location', '$anchorScrol
             { label: 'Pan fried fillet of sea bass presented on a bed of buttered crushed jersey royals with picked crab and herbs topped with grilled langoustine finished with a chive cream', value: 'sea bass' }
         ];
 
-        $scope.desertOptions = [
+        $scope.dessertOptions = [
            { label: 'Caramelized banana creme brulee with a coconut creme anglaise, rum and raisin ice cream and banana sponge', value: 'creme brulee' },
            { label: 'Rosewater eton mess with blackberry curd, lemon sherbet and nutty pear crumble', value: 'eton mess' }
         ];

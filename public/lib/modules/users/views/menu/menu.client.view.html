@@ -59,14 +59,14 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="dessert">Dessert</label>
                             <div class="col-sm-10">
-                                <div class="radio" data-ng-repeat="desert in desertOptions">
+                                <div class="radio" data-ng-repeat="dessert in dessertOptions">
                                     <label>
                                         <input
                                             name="dessert"
                                             type="radio"
-                                            value="{{desert.value}}"
-                                            ng-model="menuSelection.desert" />
-                                            {{desert.label}}
+                                            value="{{dessert.value}}"
+                                            ng-model="menuSelection.dessert" />
+                                            {{dessert.label}}
                                     </label>
                                 </div>
                             </div>
