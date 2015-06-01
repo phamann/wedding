@@ -16,7 +16,7 @@ header.controller('HeaderController', ['$scope', 'Authentication', 'Menus',
         Menus.addMenuItem('topbar', 'Location', 'location', 'item', 'location', true);
         Menus.addMenuItem('topbar', 'Accomodation', 'accomodation', 'item', 'accomodation', true);
         Menus.addMenuItem('topbar', 'Gifts', 'gifts', 'item', 'gifts', true);
-        Menus.addMenuItem('topbar', 'Weeding breakfast', 'food', 'item', 'food', true);
+        Menus.addMenuItem('topbar', 'Wedding breakfast', 'food', 'item', 'food', true);
         Menus.addMenuItem('topbar', 'Admin', 'users', 'item', 'users', false, ['admin']);
 
         $scope.toggleCollapsibleMenu = () => {
