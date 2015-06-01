@@ -3,8 +3,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ol class="breadcrumb">
-                    <li><a ui-sref="home">Home</a></li>
-                    <li>Menus</li>
+                    <li><a ui-sref="home">Admin</a></li>
+                    <li><a ui-sref="users">Users</a></li>
+                    <li><a ui-sref="menus" class="active">Food</a></li>
                 </ol>
             </div>
         </div>
@@ -63,5 +64,32 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Dietry requirements</h3>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="table-responsive" ng-show='dietry.length > 0'>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Requirement</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="requirement in dietry">
+                                <td data-ng-bind="requirement.fullName"></td>
+                                <td data-ng-bind="requirement.dietry"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p ng-show="dietry.length === 0">There are no dietry requirements yet.</p>
+            </div>
+        </div>
+
     </div>
 </section>

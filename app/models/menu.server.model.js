@@ -31,6 +31,10 @@ var MenuSchema = new Schema({
         trim: true,
         required: 'Please select a dessert'
     },
+    dietry: {
+        type: String,
+        trim: true
+    },
     updated: {
         type: Date
     },

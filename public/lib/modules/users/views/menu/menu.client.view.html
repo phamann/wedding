@@ -55,7 +55,8 @@
                             </div>
                         </div>
                         <hr/>
-                    </fieldset><fieldset>
+                    </fieldset>
+                    <fieldset>
                         <div class="form-group">
                             <label class="col-sm-2 control-label" for="dessert">Dessert</label>
                             <div class="col-sm-10">
@@ -72,7 +73,17 @@
                             </div>
                         </div>
                         <hr/>
-                    </fieldset><fieldset>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <span id="helpBlock" class="help-block">If you have any special dietry requirements or allergies, please let us know below:</span>
+                                <textarea class="form-control" ng-model="menuSelection.dietry" rows="3" aria-describedby="helpBlock" placeholder="Dietry requirements"></textarea>
+                            </div>
+                        </div>
+                        <hr/>
+                    </fieldset>
+                    <fieldset>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
                                 <button ng-disabled="menuForm.$invalid" type="submit" class="btn btn-large btn-success">Submit</button>

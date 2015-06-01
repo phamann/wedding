@@ -21,6 +21,9 @@ menus.controller('MenusController', ['$scope', '$http', '$location', '$anchorScr
                     'eton mess'  : menus.filter(function(m){ return m.dessert === 'eton mess'; }).length,
                     'total': menus.length
                 };
+                $scope.dietry = menus.filter((m)=>{
+                    return !!m.dietry && m.dietry.length > 0;
+                });
             });
         }
 
