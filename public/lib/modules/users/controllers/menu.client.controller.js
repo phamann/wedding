@@ -18,7 +18,8 @@ menu.controller('MenuController', ['$scope', '$http', '$location', '$anchorScrol
 
         $scope.mainOptions = [
             { label: 'Flame grilled scotch beef fillet au poivre with blistered cherry tomatoes and woodland mushroom dauphinoise potatoes', value: 'beef' },
-            { label: 'Pan fried fillet of sea bass presented on a bed of buttered crushed jersey royals with picked crab and herbs topped with grilled langoustine finished with a chive cream', value: 'sea bass' }
+            { label: 'Pan fried fillet of sea bass presented on a bed of buttered crushed jersey royals with picked crab and herbs topped with grilled langoustine finished with a chive cream', value: 'sea bass' },
+            { label: 'Warm salad of sautéed sea salt and thyme Jersey royal potatoes, poached hen egg, onion marmalade, parmesan crisp and grain mustard dressing (v)', value: 'potato salad' }
         ];
 
         $scope.dessertOptions = [

@@ -17,6 +17,7 @@ menus.controller('MenusController', ['$scope', '$http', '$location', '$anchorScr
                     'scallops'  : menus.filter(function(m){ return m.starter === 'scallops'; }).length,
                     'beef'  : menus.filter(function(m){ return m.main === 'beef'; }).length,
                     'sea bass'  : menus.filter(function(m){ return m.main === 'sea bass'; }).length,
+                    'potato salad'  : menus.filter(function(m){ return m.main === 'potato salad'; }).length,
                     'creme brulee'  : menus.filter(function(m){ return m.dessert === 'creme brulee'; }).length,
                     'eton mess'  : menus.filter(function(m){ return m.dessert === 'eton mess'; }).length,
                     'total': menus.length
